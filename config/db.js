@@ -1,9 +1,8 @@
-
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect(process.env.MONGO_URI); // <- must use env variable
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`Error: ${error.message}`);
@@ -12,4 +11,3 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
-
