@@ -1,4 +1,5 @@
 import connectDB from "./config/db.js";
+import express from "express";
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -10,6 +11,7 @@ dotenv.config();
 connectDB(); // must be after dotenv.config()
 
 const app = express();
+app.listen(3000);
 
 app.use(cors());
 app.use(express.json());
